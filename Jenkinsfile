@@ -50,7 +50,7 @@ pipeline {
 		stage('Docker Image Push ') {
             steps {
             script {
-		    sh 'docker login -u moatezkh -p moatez123' 
+		    sh 'docker login -u moatezkh -p moatez123456' 
 		    sh 'docker push moatezkh/event'
 		    }
 		    }
