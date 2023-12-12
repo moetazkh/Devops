@@ -33,5 +33,5 @@ pipeline {
               withSonarQubeEnv('SonarQube') {
                 sh 'mvn clean -DskipTests package sonar:sonar'
               }
-            }
+            }}
     }}
