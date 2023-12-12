@@ -54,5 +54,5 @@ pipeline {
 		    sh 'docker push moatezkh/event'
 		    }
 		    }
-	    
+		}    
     }}
