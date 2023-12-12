@@ -28,4 +28,10 @@ pipeline {
 		    sh """mvn -version"""
 	        }
 	    }
+	     stage("SonarQube Analysis") {
+            steps {
+              withSonarQubeEnv('SonarQube') {
+                sh 'mvn clean -DskipTests package sonar:sonar'
+              }
+            }
     }}
