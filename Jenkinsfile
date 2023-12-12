@@ -58,7 +58,7 @@ pipeline {
 	    stage("DockerCompose") {
 			 steps {
 				echo "\033[34m*********Starting application*********\033[0m";
-				sh 'docker-compose up -d';
+				sh 'docker-compose down && docker-compose up -d';
 				echo "\033[42m\033[97m*********Apllication Is Started *********\033[0m"
 			}
 		}
