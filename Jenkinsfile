@@ -34,7 +34,7 @@ pipeline {
                 sh 'mvn clean -DskipTests package sonar:sonar'
               }
             }
-          }/*
+          }*/
 	    stage("NEXUS") {
         	steps {
 		 sh 'mvn clean -DskipTests deploy'
