@@ -28,13 +28,13 @@ pipeline {
 		    sh """mvn -version"""
 	        }
 	    }
-	  /*   stage("SonarQube Analysis") {
+	     stage("SonarQube Analysis") {
             steps {
               withSonarQubeEnv('SonarQube') {
                 sh 'mvn clean -DskipTests package sonar:sonar'
               }
             }
-          }*/
+          }
 	    stage("NEXUS") {
         	steps {
 		 sh 'mvn clean -DskipTests deploy'
@@ -47,14 +47,14 @@ pipeline {
 		    }
 		}
 		}
-/*		stage('Docker Image Push ') {
+		stage('Docker Image Push ') {
             steps {
             script {
 		    sh 'docker login -u moatezkh -p moatez123456' 
 		    sh 'docker push moatezkh/event'
 		    }
 		    }
-		}*/
+		}
 	    stage("DockerCompose") {
 			 steps {
 				echo "\033[34m*********Starting application*********\033[0m";
