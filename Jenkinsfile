@@ -23,11 +23,7 @@ pipeline {
       		}
     	}
 	    
-        stage('Testing maven') {
-		    steps {
-		    sh """mvn -version"""
-	        }
-	    }
+      
 	     stage("SonarQube Analysis") {
             steps {
               withSonarQubeEnv('SonarQube') {
@@ -35,6 +31,11 @@ pipeline {
               }
             }
           }
+	      stage('Testing maven') {
+		    steps {
+		    sh """mvn -version"""
+	        }
+	    }
 	    stage("NEXUS") {
         	steps {
 		 sh 'mvn clean -DskipTests deploy'
